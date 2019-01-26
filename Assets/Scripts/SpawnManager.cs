@@ -6,13 +6,13 @@ public class SpawnManager : MonoBehaviour {
 
 	//Array of spawners
 	[SerializeField]
-	private GameObject[] spawners;
+	private EnemySpawn[] spawners;
 
 	//Array of enemy prefabs
 	[SerializeField]
 	private GameObject[] enemies;
 
-	private GameObject current_spawner;
+	private EnemySpawn current_spawner;
 
 	private float min_time = 15.0f;
 	private float max_time = 30.0f;
@@ -20,13 +20,20 @@ public class SpawnManager : MonoBehaviour {
 	private int enemy_num;
 	private float spawn_time;
 
-	//boolean to prevent logic from happening more than once when timer is down to 0
-	private bool spawn_ready = false;
+	[SerializeField]
+	private bool spawnEnemyOnStart;
 
 	// Use this for initialization
 	void Start () 
 	{
-		spawn_time = Random.Range(min_time, max_time);
+		if(spawnEnemyOnStart == true)
+		{
+			spawn_time = 0;
+		}
+		else
+		{
+			spawn_time = Random.Range(min_time, max_time);
+		}
 	}
 	
 	// Update is called once per frame
@@ -35,19 +42,26 @@ public class SpawnManager : MonoBehaviour {
 		//Spawn time countdown
 		spawn_time -= Time.deltaTime;
 
-		if(spawn_time <= 0 && spawn_ready == false)
+		if(spawn_time <= 0)
 		{
-			spawn_ready = true;
-
-			spawner_num = Random.Range(0, 8);
-			enemy_num = Random.Range(0, 3);
+			spawner_num = GetRandomSpawner();
+			enemy_num = GetRandomEnemy();
 
 			current_spawner = spawners[spawner_num];
-			current_spawner.GetComponent<EnemySpawn>().SpawnEnemy(enemies[enemy_num]);
+			current_spawner.SpawnEnemy(enemies[enemy_num]);
 
 			spawn_time = Random.Range(min_time, max_time);
-
-			spawn_ready = false;
 		}
+	}
+
+	int GetRandomSpawner()
+	{
+		return Random.Range(0, spawners.Length);
+		
+	}
+
+	int GetRandomEnemy()
+	{
+		return Random.Range(0, enemies.Length);
 	}
 }

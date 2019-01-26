@@ -524,15 +524,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9afb4484d1c094bf88884ab574356374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawners:
-  - {fileID: 240860987}
-  - {fileID: 1760687925}
-  - {fileID: 452245015}
-  - {fileID: 1291027829}
-  - {fileID: 1145327881}
-  - {fileID: 488500569}
-  - {fileID: 2024567896}
-  - {fileID: 2116079005}
+  spawnerComponents:
+  - {fileID: 240860989}
+  - {fileID: 1760687927}
+  - {fileID: 452245017}
+  - {fileID: 1291027831}
+  - {fileID: 1145327883}
+  - {fileID: 488500571}
+  - {fileID: 2024567898}
+  - {fileID: 2116079007}
   enemies:
   - {fileID: 1203082271397224, guid: bed725e1447dc4e04932eef10c907f96, type: 2}
   - {fileID: 1203082271397224, guid: 2d289f2d4141a4104a45c85462180fe1, type: 2}
@@ -647,8 +647,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0157b3fce949417aaad2088ec3a7b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  speed: 5
+  baseHealth: 3
+  baseSpeed: 0
   walkRight: 0
   walkLeft: 0
   walkUp: 0
