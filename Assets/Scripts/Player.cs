@@ -14,8 +14,11 @@ public class Player : MonoBehaviour {
 	[SerializeField] KeyCode walkUp;
 	[SerializeField] KeyCode walkDown;
 
+	[Header("Hearts")]
+	[SerializeField] GameObject[] hearts;
+
 	float speed;
-	float health;
+	int health;
 
 	void Start(){
 		health = baseHealth;
@@ -45,9 +48,10 @@ public class Player : MonoBehaviour {
 
 	public void Damage()
 	{
-		Debug.Log("hit");
-		health --;
 
+		health --;
+		hearts[health].SetActive(false);
+		
 		if(health <= 0)
 		{
 			Debug.Log("Game Over");
