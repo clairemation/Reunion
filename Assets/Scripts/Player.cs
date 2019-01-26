@@ -5,20 +5,39 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
 	[Header("Stats")]
-	public int health = 3;
-	public float speed;
+	[SerializeField] int baseHealth = 3;
+	[SerializeField] float baseSpeed;
 
 	[Header("Controls")]
-	public KeyCode walkRight;
-	public KeyCode walkLeft;
-	public KeyCode walkUp;
-	public KeyCode walkDown;
+	[SerializeField] KeyCode walkRight;
+	[SerializeField] KeyCode walkLeft;
+	[SerializeField] KeyCode walkUp;
+	[SerializeField] KeyCode walkDown;
 
-	void FixedUpdate () {
-		Move ();
+	float speed;
+	float health;
+
+	void Start(){
+		health = baseHealth;
+		speed = baseSpeed;
 	}
 
-	void Move () {
+	void FixedUpdate () {
+		CheckMovement ();
+	}
+
+	public void TimedSpeedIncrease (float seconds, float multiplier) {
+		float increase = multiplier * baseSpeed - baseSpeed;
+		StartCoroutine(IncreaseSpeedForSeconds(increase, seconds));
+	}
+
+	IEnumerator IncreaseSpeedForSeconds (float increase, float seconds) {
+		speed += increase;
+		yield return new WaitForSeconds(seconds);
+		speed -= increase;
+	}
+
+	void CheckMovement () {
 		float vert = Input.GetAxis ("Vertical") * speed * Time.deltaTime;
 		float hori = Input.GetAxis ("Horizontal") * speed * Time.deltaTime;
 		transform.Translate(hori, vert, 0f);
