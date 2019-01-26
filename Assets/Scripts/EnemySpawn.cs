@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void SpawnEnemy(GameObject enemy)
+	{
+		Instantiate(enemy, transform.position, Quaternion.identity);
 	}
 }
