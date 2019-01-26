@@ -25,7 +25,7 @@ public class SineMovement : MonoBehaviour {
 		SetAngle(angle);
 	}
 
-	void Update () {
+	void FixedUpdate () {
 		float stage = Mathf.Sin (progress) * RIGHT_ANGLE;
 		Quaternion curveLocation = Quaternion.Euler (0f, 0f, stage * curveAmplitude);
 		transform.position += curveLocation * angleOffset * Vector3.right * step;
