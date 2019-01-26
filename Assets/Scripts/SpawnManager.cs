@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour {
 
+	//Array of spawners
 	[SerializeField]
 	private GameObject[] spawners;
 
+	//Array of enemy prefabs
 	[SerializeField]
 	private GameObject[] enemies;
 
@@ -18,6 +20,7 @@ public class SpawnManager : MonoBehaviour {
 	private int enemy_num;
 	private float spawn_time;
 
+	//boolean to prevent logic from happening more than once when timer is down to 0
 	private bool spawn_ready = false;
 
 	// Use this for initialization
@@ -29,6 +32,7 @@ public class SpawnManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		//Spawn time countdown
 		spawn_time -= Time.deltaTime;
 
 		if(spawn_time <= 0 && spawn_ready == false)
