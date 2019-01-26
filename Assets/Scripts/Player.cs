@@ -42,4 +42,16 @@ public class Player : MonoBehaviour {
 		float hori = Input.GetAxis ("Horizontal") * speed * Time.deltaTime;
 		transform.Translate(hori, vert, 0f);
 	}
+
+	public void Damage()
+	{
+		Debug.Log("hit");
+		health --;
+
+		if(health <= 0)
+		{
+			Debug.Log("Game Over");
+			//Game Over
+		}
+	}
 }
