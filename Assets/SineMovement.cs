@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SineMovement : MonoBehaviour {
-	
+
+	[SerializeField] float speed = 0.05f;
 	[SerializeField] float angle = 0f;
 	[SerializeField] float initialCurveAmplitude = 0.5f;
 
@@ -24,7 +25,7 @@ public class SineMovement : MonoBehaviour {
 	void Update () {
 		Quaternion curveLocation = Quaternion.Euler (0f, 0f, Mathf.Sin (progress) * 90f * curveAmplitude);
 		transform.position += curveLocation * angleOffset * Vector3.right * 0.05f;
-		progress += 0.05f;
+		progress += speed;
 	}
 
 	void OnCollisionEnter2D(Collision2D col){
