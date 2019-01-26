@@ -14,8 +14,19 @@ public class Player : MonoBehaviour {
 	[SerializeField] KeyCode walkUp;
 	[SerializeField] KeyCode walkDown;
 
+
+	/* 
+	The Hearts, Game Over Panel, and Reset Button
+	will most likely be controlled by a Game Manager later
+	 */
 	[Header("Hearts")]
 	[SerializeField] GameObject[] hearts;
+
+	[Header("Game Over Panel")]
+	[SerializeField] GameObject gameOverPanel;
+
+	[Header("Reset Button")]
+	[SerializeField] GameObject resetButton;
 
 	float speed;
 	int health;
@@ -48,14 +59,16 @@ public class Player : MonoBehaviour {
 
 	public void Damage()
 	{
-
 		health --;
 		hearts[health].SetActive(false);
-		
+
 		if(health <= 0)
 		{
-			Debug.Log("Game Over");
 			//Game Over
+			Debug.Log("Game Over");
+			gameOverPanel.SetActive(true);
+			resetButton.SetActive(true);
+			Destroy(this.gameObject);
 		}
 	}
 }
