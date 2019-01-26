@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class SineMovement : MonoBehaviour {
 
+	const float RIGHT_ANGLE = 90f;
+
 	[SerializeField] float speed = 0.05f;
+	[SerializeField] float step = 0.05f;
 	[SerializeField] float angle = 0f;
 	[SerializeField] float initialCurveAmplitude = 0.5f;
 
@@ -23,17 +26,21 @@ public class SineMovement : MonoBehaviour {
 	}
 
 	void Update () {
-		Quaternion curveLocation = Quaternion.Euler (0f, 0f, Mathf.Sin (progress) * 90f * curveAmplitude);
-		transform.position += curveLocation * angleOffset * Vector3.right * 0.05f;
+		float stage = Mathf.Sin (progress) * RIGHT_ANGLE;
+		Quaternion curveLocation = Quaternion.Euler (0f, 0f, stage * curveAmplitude);
+		transform.position += curveLocation * angleOffset * Vector3.right * step;
 		progress += speed;
 	}
 
 	void OnCollisionEnter2D(Collision2D col){
-		//Turn around
 		if (col.gameObject.CompareTag ("Obstacle")) {
-			angle = (angle + 180f) % 360f;
-			SetAngle (angle);
+			TurnAround ();
 		}
+	}
+
+	void TurnAround(){
+		angle = (angle + 180f) % 360f;
+		SetAngle (angle);
 	}
 
 	void SetAngle(float degrees){
