@@ -28,12 +28,16 @@ public class Player : MonoBehaviour {
 	[Header("Reset Button")]
 	[SerializeField] GameObject resetButton;
 
+	SpriteRenderer renderer;
+
 	float speed;
 	int health;
 
 	void Start(){
 		health = baseHealth;
 		speed = baseSpeed;
+
+		renderer = GetComponent<SpriteRenderer>();
 	}
 
 	void FixedUpdate () {
@@ -62,6 +66,8 @@ public class Player : MonoBehaviour {
 		health --;
 		hearts[health].SetActive(false);
 
+		StartCoroutine(Flashing());
+
 		if(health <= 0)
 		{
 			//Game Over
@@ -70,5 +76,35 @@ public class Player : MonoBehaviour {
 			resetButton.SetActive(true);
 			Destroy(this.gameObject);
 		}
+	}
+
+	IEnumerator Flashing()
+	{
+		gameObject.tag = "Invincible";
+		yield return new WaitForSeconds(0.1f);
+		renderer.enabled = false;
+		yield return new WaitForSeconds(0.1f);
+		renderer.enabled = true;
+		yield return new WaitForSeconds(0.1f);
+		renderer.enabled = false;
+		yield return new WaitForSeconds(0.1f);
+		renderer.enabled = true;
+		yield return new WaitForSeconds(0.1f);
+		renderer.enabled = false;
+		yield return new WaitForSeconds(0.1f);
+		renderer.enabled = true;
+		yield return new WaitForSeconds(0.1f);
+		renderer.enabled = false;
+		yield return new WaitForSeconds(0.1f);
+		renderer.enabled = true;
+		yield return new WaitForSeconds(0.1f);
+		renderer.enabled = false;
+		yield return new WaitForSeconds(0.1f);
+		renderer.enabled = true;
+		yield return new WaitForSeconds(0.1f);
+		renderer.enabled = false;
+		yield return new WaitForSeconds(0.1f);
+		renderer.enabled = true;
+		gameObject.tag = "Player";
 	}
 }

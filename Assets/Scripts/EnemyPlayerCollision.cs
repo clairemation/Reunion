@@ -13,6 +13,8 @@ public class EnemyPlayerCollision : MonoBehaviour {
 		if(other.gameObject.tag == "Player")
 		{
 			other.gameObject.GetComponent<Player>().Damage();
+
+			Destroy(this.gameObject);
 		}
 	}
 }
