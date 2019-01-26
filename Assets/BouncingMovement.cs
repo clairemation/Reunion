@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BouncingMovement : MonoBehaviour {
+public class BouncingMovement : Movement {
 
 	[SerializeField] float speed = 0.05f;
 	[SerializeField] float angle = 25f;

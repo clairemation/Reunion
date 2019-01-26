@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlowHomingMovement : MonoBehaviour {
+public class SlowHomingMovement : Movement {
 
 	[SerializeField] float speed = 0.02f;
 	[SerializeField] float angle = 25f;
