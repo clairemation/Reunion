@@ -38,8 +38,8 @@ public class Player : MonoBehaviour {
 	}
 
 	void CheckMovement () {
-		float vert = Input.GetAxis ("Vertical") * speed * Time.deltaTime;
-		float hori = Input.GetAxis ("Horizontal") * speed * Time.deltaTime;
+		float vert = Input.GetAxisRaw ("Vertical") * speed * Time.deltaTime;
+		float hori = Input.GetAxisRaw ("Horizontal") * speed * Time.deltaTime;
 		transform.Translate(hori, vert, 0f);
 	}
 }
