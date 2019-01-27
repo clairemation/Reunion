@@ -22,10 +22,11 @@ GameObject:
   - component: {fileID: 212858197478343152}
   - component: {fileID: 58672726028379674}
   - component: {fileID: 50939272625632284}
-  - component: {fileID: 114533217479212142}
-  - component: {fileID: 114097106725928968}
+  - component: {fileID: 114154600718186834}
+  - component: {fileID: 114964940215332022}
+  - component: {fileID: 114362862471223566}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: HomingWhenNearEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,9 +38,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1496679838659604}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -79,7 +80,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!114 &114097106725928968
+--- !u!114 &114154600718186834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1496679838659604}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7b93a216c0ba4de6840a673325c0e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.07
+  angle: 25
+--- !u!114 &114362862471223566
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,10 +101,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1496679838659604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 089e21fa6bda147689b2f9cd27007a8d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c8994dc438ee4516a51522a889aad82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114533217479212142
+  distanceThreshold: 4
+--- !u!114 &114964940215332022
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,7 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.05
   step: 0.05
-  angle: 0
+  angle: 25
   initialCurveAmplitude: 0.5
 --- !u!212 &212858197478343152
 SpriteRenderer:
@@ -141,7 +156,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.62902516, g: 0.43867922, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

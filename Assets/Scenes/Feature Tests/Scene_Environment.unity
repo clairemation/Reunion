@@ -152,6 +152,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1714106234868150, guid: 59ee48bb40ced4159aba74c9cfa40682, type: 2}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108717926081890, guid: 59ee48bb40ced4159aba74c9cfa40682, type: 2}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1746309833222252, guid: 59ee48bb40ced4159aba74c9cfa40682, type: 2}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1444357187493752, guid: 59ee48bb40ced4159aba74c9cfa40682, type: 2}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59ee48bb40ced4159aba74c9cfa40682, type: 2}
   m_IsPrefabAsset: 0
