@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 58672726028379674}
   - component: {fileID: 50939272625632284}
   - component: {fileID: 114859410052193110}
+  - component: {fileID: 114051293640292882}
   m_Layer: 0
   m_Name: BouncingEnemy
   m_TagString: Enemy
@@ -78,6 +79,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &114051293640292882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1496679838659604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e21fa6bda147689b2f9cd27007a8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114859410052193110
 MonoBehaviour:
   m_ObjectHideFlags: 1

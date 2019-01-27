@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114273526761891068}
   - component: {fileID: 114145771948847370}
   - component: {fileID: 114278629655421040}
+  - component: {fileID: 114540474507334484}
   m_Layer: 0
   m_Name: AimAndDashEnemy
   m_TagString: Enemy
@@ -115,6 +116,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff4ecf31aaa24429eae845cbdc8daa01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114540474507334484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1496679838659604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089e21fa6bda147689b2f9cd27007a8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212858197478343152
