@@ -893,7 +893,10 @@ MonoBehaviour:
   shakePower: 0.7
   shakeDuration: 1
   shakeSlowDownAmount: 1
+  camera: {fileID: 0}
   shouldShake: 0
+  originalPosition: {x: 0, y: 0, z: 0}
+  initialDuration: 0
 --- !u!1 &1745538043
 GameObject:
   m_ObjectHideFlags: 0

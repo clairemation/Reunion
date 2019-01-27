@@ -35,6 +35,8 @@ public class Player : MonoBehaviour {
 	float speed;
 	int health;
 
+	bool shieldActive = false;
+
 	void Start(){
 		health = baseHealth;
 		speed = baseSpeed;
@@ -58,6 +60,22 @@ public class Player : MonoBehaviour {
 		speed -= increase;
 	}
 
+	public void HealthRestore()
+	{
+		if(health < 3)
+		{
+			hearts[health].gameObject.SetActive(true);
+			health ++;
+		}
+	}
+
+	public void ShieldActivated()
+	{
+		Debug.Log("Shield On");
+		shieldActive = true;
+		//Change protagonist sprite to have shield
+	}
+
 	void CheckMovement () {
 		float vert = Input.GetAxis ("Vertical") * speed * Time.deltaTime;
 		float hori = Input.GetAxis ("Horizontal") * speed * Time.deltaTime;
@@ -66,15 +84,28 @@ public class Player : MonoBehaviour {
 
 	public void TakeDamage()
 	{
-		cameraShake.shouldShake = true;
-		health --;
-		hearts[health].gameObject.SetActive(false);
-
-		StartCoroutine(Flashing());
-
-		if(health <= 0)
+		if(shieldActive)
 		{
-			GameOver ();
+			Debug.Log("Shield Off");
+			shieldActive = false;
+			//Change protagonist sprite back to normal
+		}
+		else
+		{
+			health --;
+			hearts[health].gameObject.SetActive(false);
+
+      cameraShake.shouldShake = true;
+			StartCoroutine(Flashing());
+
+			if(health <= 0)
+			{
+				//Game Over
+				Debug.Log("Game Over");
+				gameOverPanel.gameObject.SetActive(true);
+				resetButton.gameObject.SetActive(true);
+				Destroy(this.gameObject);
+			}
 		}
 	}
 
