@@ -276,6 +276,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &649998768 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114636135432099452, guid: 5263fb244c30143e1b184f2f998ba7db,
+    type: 2}
+  m_PrefabInternal: {fileID: 968234932}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &912493748
 Prefab:
   m_ObjectHideFlags: 0
@@ -373,6 +379,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114251314373388364, guid: b70302a3500634b109ea388f83d73220,
+        type: 2}
+      propertyPath: hearts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4860620223455094, guid: b70302a3500634b109ea388f83d73220, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.33
@@ -405,9 +416,46 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114251314373388364, guid: b70302a3500634b109ea388f83d73220,
+        type: 2}
+      propertyPath: hearts.Array.data[0]
+      value: 
+      objectReference: {fileID: 1015509329}
+    - target: {fileID: 114251314373388364, guid: b70302a3500634b109ea388f83d73220,
+        type: 2}
+      propertyPath: hearts.Array.data[1]
+      value: 
+      objectReference: {fileID: 1864230855}
+    - target: {fileID: 114251314373388364, guid: b70302a3500634b109ea388f83d73220,
+        type: 2}
+      propertyPath: hearts.Array.data[2]
+      value: 
+      objectReference: {fileID: 955879991}
+    - target: {fileID: 114251314373388364, guid: b70302a3500634b109ea388f83d73220,
+        type: 2}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 1064334769}
+    - target: {fileID: 114251314373388364, guid: b70302a3500634b109ea388f83d73220,
+        type: 2}
+      propertyPath: resetButton
+      value: 
+      objectReference: {fileID: 649998768}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b70302a3500634b109ea388f83d73220, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &930106478 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1404242426543286, guid: b70302a3500634b109ea388f83d73220,
+    type: 2}
+  m_PrefabInternal: {fileID: 921143639}
+--- !u!81 &930106479
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 930106478}
+  m_Enabled: 1
 --- !u!1001 &931896905
 Prefab:
   m_ObjectHideFlags: 0
@@ -530,6 +578,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4358077897001120, guid: 59ee48bb40ced4159aba74c9cfa40682,
     type: 2}
   m_PrefabInternal: {fileID: 931896905}
+--- !u!114 &955879991 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114942609035284648, guid: 98f7e21af55e74edd80c49e868ef3e79,
+    type: 2}
+  m_PrefabInternal: {fileID: 1183223328}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &968234932
 Prefab:
   m_ObjectHideFlags: 0
@@ -642,6 +696,17 @@ Prefab:
 --- !u!224 &968234933 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224276392002431462, guid: 5263fb244c30143e1b184f2f998ba7db,
+    type: 2}
+  m_PrefabInternal: {fileID: 968234932}
+--- !u!114 &1015509329 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114636959080448564, guid: 98f7e21af55e74edd80c49e868ef3e79,
+    type: 2}
+  m_PrefabInternal: {fileID: 1183223328}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &1064334769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1482127051386836, guid: 5263fb244c30143e1b184f2f998ba7db,
     type: 2}
   m_PrefabInternal: {fileID: 968234932}
 --- !u!1001 &1183223328
@@ -874,6 +939,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1468461026}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1864230855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114650296495500922, guid: 98f7e21af55e74edd80c49e868ef3e79,
+    type: 2}
+  m_PrefabInternal: {fileID: 1183223328}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &2082634785
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +954,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2082634788}
   - component: {fileID: 2082634787}
-  - component: {fileID: 2082634786}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -891,13 +961,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &2082634786
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2082634785}
-  m_Enabled: 1
 --- !u!20 &2082634787
 Camera:
   m_ObjectHideFlags: 0
