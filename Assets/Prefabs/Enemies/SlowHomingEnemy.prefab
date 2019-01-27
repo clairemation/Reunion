@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212858197478343152}
   - component: {fileID: 58672726028379674}
   - component: {fileID: 50939272625632284}
-  - component: {fileID: 114623037937370460}
+  - component: {fileID: 114636669198671964}
   m_Layer: 0
   m_Name: SlowHomingEnemy
   m_TagString: Enemy
@@ -78,7 +78,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!114 &114623037937370460
+--- !u!114 &114636669198671964
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,10 +86,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1496679838659604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b93a216c0ba4de6840a673325c0e9c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e983fb34efb84933a99ddb45dff7237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.03
+  speed: 0.07
   angle: 25
 --- !u!212 &212858197478343152
 SpriteRenderer:
