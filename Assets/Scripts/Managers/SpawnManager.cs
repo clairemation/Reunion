@@ -53,7 +53,7 @@ public class SpawnManager : MonoBehaviour {
 	}
 
 	public void UpdateSpawnRates (int score, int maxScore) {
-		float progress = Mathf.InverseLerp (0f, maxScore, score);
+		float progress = Mathf.Min(Mathf.InverseLerp (0f, maxScore, score), 1f);
 
 		minTime = minTimeCurve.GetValue (progress);
 		maxTime = maxTimeCurve.GetValue (progress);
