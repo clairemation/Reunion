@@ -549,26 +549,8 @@ Prefab:
       objectReference: {fileID: 909899266}
     - target: {fileID: 114125036080030852, guid: d543af02794f04973a3347a661c9738c,
         type: 2}
-      propertyPath: healthItem
-      value: 
-      objectReference: {fileID: 114005062144249338, guid: 910f8766d651045cfac7cb20dbd4c8d0,
-        type: 2}
-    - target: {fileID: 114125036080030852, guid: d543af02794f04973a3347a661c9738c,
-        type: 2}
-      propertyPath: shieldItem
-      value: 
-      objectReference: {fileID: 114164596481046970, guid: b978aa119aa384b41b64eb1fe2501da3,
-        type: 2}
-    - target: {fileID: 114125036080030852, guid: d543af02794f04973a3347a661c9738c,
-        type: 2}
-      propertyPath: speedItem
-      value: 
-      objectReference: {fileID: 114205696065122272, guid: 6d8d97215550a4b2da07bbff51d1626e,
-        type: 2}
-    - target: {fileID: 114125036080030852, guid: d543af02794f04973a3347a661c9738c,
-        type: 2}
       propertyPath: chanceSpawnItem
-      value: 0.52
+      value: 0.49
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d543af02794f04973a3347a661c9738c, type: 2}
