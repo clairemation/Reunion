@@ -15,6 +15,9 @@ public class Player : MonoBehaviour {
 	[SerializeField] KeyCode walkUp;
 	[SerializeField] KeyCode walkDown;
 
+	[Header("Main Camera")]
+	[SerializeField] private CameraShakeOnDamage cameraShake;
+
 
 	/* 
 	The Hearts, Game Over Panel, and Reset Button
@@ -23,7 +26,7 @@ public class Player : MonoBehaviour {
 	[Header("Hearts")]
 	[SerializeField] Image[] hearts;
 
-	[SerializeField] Image gameOverPanel;
+	[SerializeField] GameObject gameOverPanel;
 
 	[SerializeField] Button resetButton;
 
@@ -39,6 +42,7 @@ public class Player : MonoBehaviour {
 		speed = baseSpeed;
 
 		renderer = GetComponent<SpriteRenderer>();
+
 	}
 
 	void FixedUpdate () {
@@ -91,6 +95,7 @@ public class Player : MonoBehaviour {
 			health --;
 			hearts[health].gameObject.SetActive(false);
 
+      cameraShake.shouldShake = true;
 			StartCoroutine(Flashing());
 
 			if(health <= 0)
@@ -102,7 +107,13 @@ public class Player : MonoBehaviour {
 				Destroy(this.gameObject);
 			}
 		}
-		
+	}
+
+	void GameOver(){
+		Time.timeScale = 0f;
+		gameOverPanel.SetActive(true);
+		resetButton.gameObject.SetActive(true);
+		Destroy(this.gameObject);
 	}
 
 	IEnumerator Flashing()
