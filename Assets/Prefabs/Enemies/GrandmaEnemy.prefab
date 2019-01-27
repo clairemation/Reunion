@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114819172306941794}
   - component: {fileID: 82289738353255658}
   - component: {fileID: 61965926229619640}
+  - component: {fileID: 95064579331632254}
   m_Layer: 0
   m_Name: GrandmaEnemy
   m_TagString: Enemy
@@ -185,6 +186,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &95064579331632254
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1496679838659604}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cee503117bef14ea99ca6a68e8b7af51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114636669198671964
 MonoBehaviour:
   m_ObjectHideFlags: 1

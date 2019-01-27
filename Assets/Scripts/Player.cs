@@ -31,7 +31,7 @@ public class Player : MonoBehaviour {
 	[SerializeField] Button resetButton;
 
 	SpriteRenderer renderer;
-
+	Animator anim;
 	float speed;
 	int health;
 
@@ -41,6 +41,7 @@ public class Player : MonoBehaviour {
 		health = baseHealth;
 		speed = baseSpeed;
 		renderer = GetComponent<SpriteRenderer>();
+		anim = GetComponent<Animator> ();
 
 	}
 
@@ -72,6 +73,7 @@ public class Player : MonoBehaviour {
 	{
 		Debug.Log("Shield On");
 		shieldActive = true;
+		anim.SetBool ("shield", true);
 		//Change protagonist sprite to have shield
 	}
 
@@ -87,6 +89,7 @@ public class Player : MonoBehaviour {
 		{
 			Debug.Log("Shield Off");
 			shieldActive = false;
+			anim.SetBool ("shield", false);
 			//Change protagonist sprite back to normal
 		}
 		else
