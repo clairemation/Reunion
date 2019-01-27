@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SineMovement : Movement {
+public class SineMovement : MonoBehaviour {
 
 	const float RIGHT_ANGLE = 90f;
 
