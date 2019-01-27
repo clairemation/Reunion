@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkingSound: {fileID: 8300000, guid: 947d8f71e1d2446dea8ace5799f6028a, type: 3}
-  hitSound: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 6cb9b8332ae0641d9bc5d449a9bb8032, type: 3}
   spawnSound: {fileID: 0}
 --- !u!114 &114623037937370460
 MonoBehaviour:

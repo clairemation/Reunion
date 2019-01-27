@@ -29,7 +29,22 @@ public class Enemy : MonoBehaviour {
 		{
 			other.gameObject.GetComponent<Player>().TakeDamage();
 
-			Destroy(this.gameObject);
+			PlayHitSoundAndDie();
 		}
+	}
+
+	void PlayHitSoundAndDie(){
+		Destroy(GetComponent<SpriteRenderer>());
+		Destroy(GetComponent<Collider>());
+		Destroy(GetComponent<Rigidbody>());
+		StartCoroutine(PlayHitSoundAndDieCoroutine(hitSound));
+	}
+
+	IEnumerator PlayHitSoundAndDieCoroutine (AudioClip sound) {
+		audioSource.clip = sound;
+		audioSource.loop = false;
+		audioSource.Play();
+		yield return new WaitForSeconds(sound.length);
+		Destroy(this.gameObject);
 	}
 }
