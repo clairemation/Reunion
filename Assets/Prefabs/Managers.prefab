@@ -179,10 +179,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 114501799660193730}
   scoreText: {fileID: 0}
-  scoreItem: {fileID: 114463364415036186, guid: f1aa4a6c6c70c40369ae0895e9d1d02f,
-    type: 2}
   maxScore: 25
   debugMessages: 0
+  scoreItem: {fileID: 114463364415036186, guid: f1aa4a6c6c70c40369ae0895e9d1d02f,
+    type: 2}
+  speedItem: {fileID: 114205696065122272, guid: 6d8d97215550a4b2da07bbff51d1626e,
+    type: 2}
+  healthItem: {fileID: 114005062144249338, guid: 910f8766d651045cfac7cb20dbd4c8d0,
+    type: 2}
+  shieldItem: {fileID: 114164596481046970, guid: b978aa119aa384b41b64eb1fe2501da3,
+    type: 2}
+  chanceSpawnItem: 0.52
 --- !u!114 &114501799660193730
 MonoBehaviour:
   m_ObjectHideFlags: 1
