@@ -54,6 +54,15 @@ public class Player : MonoBehaviour {
 		speed -= increase;
 	}
 
+	public void HealthRestore()
+	{
+		if(health < 3)
+		{
+			hearts[health].gameObject.SetActive(true);
+			health ++;
+		}
+	}
+
 	void CheckMovement () {
 		float vert = Input.GetAxis ("Vertical") * speed * Time.deltaTime;
 		float hori = Input.GetAxis ("Horizontal") * speed * Time.deltaTime;
