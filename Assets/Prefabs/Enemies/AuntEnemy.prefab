@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4611661820979520}
   - component: {fileID: 212858197478343152}
-  - component: {fileID: 58672726028379674}
   - component: {fileID: 50939272625632284}
   - component: {fileID: 114154600718186834}
   - component: {fileID: 114964940215332022}
@@ -28,6 +27,7 @@ GameObject:
   - component: {fileID: 114864031376208680}
   - component: {fileID: 82119543698000192}
   - component: {fileID: 82482000427294004}
+  - component: {fileID: 61237420793555298}
   m_Layer: 0
   m_Name: AuntEnemy
   m_TagString: Enemy
@@ -41,9 +41,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1496679838659604}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -68,8 +68,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &58672726028379674
-CircleCollider2D:
+--- !u!61 &61237420793555298
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -81,8 +81,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.6, y: 1.01}
+    newSize: {x: 0.61, y: 1.01}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Size: {x: 0.6, y: 1.01}
+  m_EdgeRadius: 0
 --- !u!82 &82119543698000192
 AudioSource:
   m_ObjectHideFlags: 0
