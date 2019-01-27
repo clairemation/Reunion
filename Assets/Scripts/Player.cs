@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
@@ -20,13 +21,11 @@ public class Player : MonoBehaviour {
 	will most likely be controlled by a Game Manager later
 	 */
 	[Header("Hearts")]
-	[SerializeField] GameObject[] hearts;
+	[SerializeField] Image[] hearts;
 
-	[Header("Game Over Panel")]
-	[SerializeField] GameObject gameOverPanel;
+	[SerializeField] Image gameOverPanel;
 
-	[Header("Reset Button")]
-	[SerializeField] GameObject resetButton;
+	[SerializeField] Button resetButton;
 
 	SpriteRenderer renderer;
 
@@ -61,10 +60,10 @@ public class Player : MonoBehaviour {
 		transform.Translate(hori, vert, 0f);
 	}
 
-	public void Damage()
+	public void TakeDamage()
 	{
 		health --;
-		hearts[health].SetActive(false);
+		hearts[health].gameObject.SetActive(false);
 
 		StartCoroutine(Flashing());
 
@@ -72,8 +71,8 @@ public class Player : MonoBehaviour {
 		{
 			//Game Over
 			Debug.Log("Game Over");
-			gameOverPanel.SetActive(true);
-			resetButton.SetActive(true);
+			gameOverPanel.gameObject.SetActive(true);
+			resetButton.gameObject.SetActive(true);
 			Destroy(this.gameObject);
 		}
 	}
@@ -81,30 +80,12 @@ public class Player : MonoBehaviour {
 	IEnumerator Flashing()
 	{
 		gameObject.tag = "Invincible";
-		yield return new WaitForSeconds(0.1f);
-		renderer.enabled = false;
-		yield return new WaitForSeconds(0.1f);
-		renderer.enabled = true;
-		yield return new WaitForSeconds(0.1f);
-		renderer.enabled = false;
-		yield return new WaitForSeconds(0.1f);
-		renderer.enabled = true;
-		yield return new WaitForSeconds(0.1f);
-		renderer.enabled = false;
-		yield return new WaitForSeconds(0.1f);
-		renderer.enabled = true;
-		yield return new WaitForSeconds(0.1f);
-		renderer.enabled = false;
-		yield return new WaitForSeconds(0.1f);
-		renderer.enabled = true;
-		yield return new WaitForSeconds(0.1f);
-		renderer.enabled = false;
-		yield return new WaitForSeconds(0.1f);
-		renderer.enabled = true;
-		yield return new WaitForSeconds(0.1f);
-		renderer.enabled = false;
-		yield return new WaitForSeconds(0.1f);
-		renderer.enabled = true;
+
+		for(int n = 0; n < 11; n++)
+		{
+			yield return new WaitForSeconds(0.2f);
+			renderer.enabled = (n%2 == 0);
+		}
 		gameObject.tag = "Player";
 	}
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPlayerCollision : MonoBehaviour {
+public class Enemy : MonoBehaviour {
 
 	/*
 	if the Enemy collides with a Player it will call the
@@ -10,9 +10,9 @@ public class EnemyPlayerCollision : MonoBehaviour {
 	*/
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if(other.gameObject.tag == "Player")
+		if(other.gameObject.CompareTag("Player"))
 		{
-			other.gameObject.GetComponent<Player>().Damage();
+			other.gameObject.GetComponent<Player>().TakeDamage();
 
 			Destroy(this.gameObject);
 		}
