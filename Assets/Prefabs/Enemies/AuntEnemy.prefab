@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e983fb34efb84933a99ddb45dff7237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.15
+  speed: 0.05
   angle: 25
 --- !u!114 &114362862471223566
 MonoBehaviour:
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8994dc438ee4516a51522a889aad82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceThreshold: 4
+  distanceThreshold: 3
 --- !u!114 &114864031376208680
 MonoBehaviour:
   m_ObjectHideFlags: 1
