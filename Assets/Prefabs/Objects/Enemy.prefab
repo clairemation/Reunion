@@ -89,6 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4be8ae64f8f4e30a9e07409d912b50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0.05
+  step: 0.05
   angle: 0
   initialCurveAmplitude: 0.5
 --- !u!212 &212858197478343152
