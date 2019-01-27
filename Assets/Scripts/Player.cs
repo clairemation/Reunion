@@ -15,6 +15,9 @@ public class Player : MonoBehaviour {
 	[SerializeField] KeyCode walkUp;
 	[SerializeField] KeyCode walkDown;
 
+	[Header("Main Camera")]
+	[SerializeField] private CameraShakeOnDamage cameraShake;
+
 
 	/* 
 	The Hearts, Game Over Panel, and Reset Button
@@ -37,6 +40,7 @@ public class Player : MonoBehaviour {
 		speed = baseSpeed;
 
 		renderer = GetComponent<SpriteRenderer>();
+
 	}
 
 	void FixedUpdate () {
@@ -62,6 +66,7 @@ public class Player : MonoBehaviour {
 
 	public void TakeDamage()
 	{
+		cameraShake.shouldShake = true;
 		health --;
 		hearts[health].gameObject.SetActive(false);
 
