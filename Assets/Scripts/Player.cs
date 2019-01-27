@@ -69,10 +69,15 @@ public class Player : MonoBehaviour {
 
 		if(health <= 0)
 		{
-			gameOverPanel.SetActive(true);
-			resetButton.gameObject.SetActive(true);
-			Destroy(this.gameObject);
+			GameOver ();
 		}
+	}
+
+	void GameOver(){
+		Time.timeScale = 0f;
+		gameOverPanel.SetActive(true);
+		resetButton.gameObject.SetActive(true);
+		Destroy(this.gameObject);
 	}
 
 	IEnumerator Flashing()

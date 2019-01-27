@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HomingWhenNearMovement : Movement {
+public class HomeWhenNear : MonoBehaviour {
 
 	[SerializeField] float distanceThreshold = 0.5f;
 
-	SlowHomingMovement homingMovement;
+	HomingMovement homingMovement;
 	SineMovement baseMovement;
 	bool isHoming = false;
 	Player player;
 
 	void Awake(){
 		player = FindObjectOfType<Player> ();
-		homingMovement = GetComponent<SlowHomingMovement> ();
+		homingMovement = GetComponent<HomingMovement> ();
 		baseMovement = GetComponent<SineMovement> ();
 	}
 
@@ -28,7 +28,6 @@ public class HomingWhenNearMovement : Movement {
 			}
 		}
 	}
-	
 
 	void EnableHoming(bool enabled){
 		baseMovement.enabled = !enabled;

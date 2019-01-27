@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlowHomingMovement : Movement {
+public class BouncingMovement : BaseMovement {
 
-	[SerializeField] float speed = 0.02f;
+	[SerializeField] float speed = 0.05f;
 	[SerializeField] float angle = 25f;
+
 	Vector3 direction;
-
-	Player player;
-
+	Collider2D collider;
+		
 	void Awake(){
-		player = FindObjectOfType<Player> ();
+		collider = GetComponent<Collider2D> ();
 	}
 
 	void OnEnable(){
@@ -24,8 +24,6 @@ public class SlowHomingMovement : Movement {
 	}
 
 	void FixedUpdate () {
-		direction = player.transform.position - transform.position;
-		direction.Normalize();
 		transform.position += direction * speed;
 	}
 
