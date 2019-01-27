@@ -78,6 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7514c9303d6094583a6ff0dfc2381b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: afb70a69704e740ec936eca9b7d7f4c0, type: 3}
+  instantSFX: {fileID: 1192297763046888, guid: 7bae32cfc3f284f68a2363e32ac2e987, type: 2}
   time: 10
   speedMultiplier: 1.5
 --- !u!212 &212320518963338384

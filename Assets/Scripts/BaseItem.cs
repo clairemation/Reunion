@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public abstract class BaseItem : MonoBehaviour {
 
+	[SerializeField] AudioClip sfx;
+	[SerializeField] GameObject instantSFX;
+
 	protected void Awake(){
 		GetComponent<Collider2D>().isTrigger = true;
 	}
@@ -12,6 +15,8 @@ public abstract class BaseItem : MonoBehaviour {
 	protected void OnTriggerEnter2D (Collider2D coll) {
 		if (coll.gameObject.CompareTag ("Player") || coll.gameObject.CompareTag("Invincible")) {
 			Activate(coll.gameObject.GetComponent<Player>());
+			GameObject temp = Instantiate(instantSFX, transform.position, Quaternion.identity); 
+			temp.GetComponent<PlaySoundAndDie>().Activate(sfx);
 			Destroy(gameObject);
 		}
 	}

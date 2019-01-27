@@ -99,16 +99,14 @@ public class Player : MonoBehaviour {
 
 			if(health <= 0)
 			{
-				//Game Over
-				Debug.Log("Game Over");
-				gameOverPanel.gameObject.SetActive(true);
-				resetButton.gameObject.SetActive(true);
-				Destroy(this.gameObject);
+				GameOver ();
+
 			}
 		}
 	}
 
 	void GameOver(){
+		Debug.Log ("Game Over");
 		Time.timeScale = 0f;
 		gameOverPanel.SetActive(true);
 		resetButton.gameObject.SetActive(true);

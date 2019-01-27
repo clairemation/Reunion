@@ -24,6 +24,9 @@ public class HomingMovement : BaseMovement {
 	}
 
 	void FixedUpdate () {
+		if (player == null) {
+			return;
+		}
 		direction = player.transform.position - transform.position;
 		direction.Normalize();
 		transform.position += direction * speed;
