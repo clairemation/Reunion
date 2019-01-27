@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
@@ -14,12 +15,28 @@ public class Player : MonoBehaviour {
 	[SerializeField] KeyCode walkUp;
 	[SerializeField] KeyCode walkDown;
 
+
+	/* 
+	The Hearts, Game Over Panel, and Reset Button
+	will most likely be controlled by a Game Manager later
+	 */
+	[Header("Hearts")]
+	[SerializeField] Image[] hearts;
+
+	[SerializeField] Image gameOverPanel;
+
+	[SerializeField] Button resetButton;
+
+	SpriteRenderer renderer;
+
 	float speed;
-	float health;
+	int health;
 
 	void Start(){
 		health = baseHealth;
 		speed = baseSpeed;
+
+		renderer = GetComponent<SpriteRenderer>();
 	}
 
 	void FixedUpdate () {
@@ -41,5 +58,34 @@ public class Player : MonoBehaviour {
 		float vert = Input.GetAxisRaw ("Vertical") * speed * Time.deltaTime;
 		float hori = Input.GetAxisRaw ("Horizontal") * speed * Time.deltaTime;
 		transform.Translate(hori, vert, 0f);
+	}
+
+	public void TakeDamage()
+	{
+		health --;
+		hearts[health].gameObject.SetActive(false);
+
+		StartCoroutine(Flashing());
+
+		if(health <= 0)
+		{
+			//Game Over
+			Debug.Log("Game Over");
+			gameOverPanel.gameObject.SetActive(true);
+			resetButton.gameObject.SetActive(true);
+			Destroy(this.gameObject);
+		}
+	}
+
+	IEnumerator Flashing()
+	{
+		gameObject.tag = "Invincible";
+
+		for(int n = 0; n < 11; n++)
+		{
+			yield return new WaitForSeconds(0.2f);
+			renderer.enabled = (n%2 == 0);
+		}
+		gameObject.tag = "Player";
 	}
 }
