@@ -40,7 +40,6 @@ public class Player : MonoBehaviour {
 	void Start(){
 		health = baseHealth;
 		speed = baseSpeed;
-
 		renderer = GetComponent<SpriteRenderer>();
 
 	}
@@ -95,7 +94,7 @@ public class Player : MonoBehaviour {
 			health --;
 			hearts[health].gameObject.SetActive(false);
 
-      cameraShake.shouldShake = true;
+      		cameraShake.shouldShake = true;
 			StartCoroutine(Flashing());
 
 			if(health <= 0)

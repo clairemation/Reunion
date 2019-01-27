@@ -10,7 +10,7 @@ public class CameraShakeOnDamage : MonoBehaviour {
 
 	Transform camera;
 	
-	public bool shouldShake = false;
+	[HideInInspector] public bool shouldShake = false;
 	
 	Vector3 originalPosition;
 	float initialDuration;

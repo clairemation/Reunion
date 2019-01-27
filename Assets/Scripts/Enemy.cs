@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour {
 	[SerializeField] AudioClip walkingSound;
 	[SerializeField] AudioClip hitSound;
 	[SerializeField] AudioClip spawnSound;
+	[SerializeField] GameObject instantSFX;
 
 	AudioSource audioSource;
 
@@ -17,34 +18,28 @@ public class Enemy : MonoBehaviour {
 
 	void Awake(){
 		audioSource = GetComponent<AudioSource>();
-
-		audioSource.clip = walkingSound;
-		audioSource.loop = true;
-		audioSource.Play();
+		StartCoroutine(PlaySpawnSoundThenWalking());
 	}
 
-	void OnCollisionEnter2D(Collision2D other)
-	{
-		if(other.gameObject.CompareTag("Player"))
-		{
-			other.gameObject.GetComponent<Player>().TakeDamage();
-
-			PlayHitSoundAndDie();
+	void OnCollisionEnter2D (Collision2D other) {
+		if (other.gameObject.CompareTag ("Player")) {
+			other.gameObject.GetComponent<Player> ().TakeDamage ();
+			Die ();
 		}
 	}
 
-	void PlayHitSoundAndDie(){
-		Destroy(GetComponent<SpriteRenderer>());
-		Destroy(GetComponent<Collider>());
-		Destroy(GetComponent<Rigidbody>());
-		StartCoroutine(PlayHitSoundAndDieCoroutine(hitSound));
+	void Die(){
+		GameObject deathSFXObj = Instantiate(instantSFX, transform.position, Quaternion.identity);
+		deathSFXObj.GetComponent<PlaySoundAndDie>().Activate(hitSound);
+		Destroy(gameObject);
 	}
 
-	IEnumerator PlayHitSoundAndDieCoroutine (AudioClip sound) {
-		audioSource.clip = sound;
-		audioSource.loop = false;
+	IEnumerator PlaySpawnSoundThenWalking(){
+		audioSource.clip = spawnSound;
 		audioSource.Play();
-		yield return new WaitForSeconds(sound.length);
-		Destroy(this.gameObject);
+		yield return new WaitForSeconds(spawnSound.length);
+		audioSource.clip = walkingSound;
+		audioSource.loop = true;
+		audioSource.Play();
 	}
 }
