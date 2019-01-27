@@ -8,6 +8,9 @@ public class Player : MonoBehaviour {
 	[Header("Stats")]
 	[SerializeField] int baseHealth = 3;
 	[SerializeField] float baseSpeed;
+	[SerializeField] GameObject instantSFX;
+	[SerializeField] AudioClip hurtSound;
+	[SerializeField] AudioClip shieldSound;
 
 	[Header("Controls")]
 	[SerializeField] KeyCode walkRight;
@@ -42,7 +45,6 @@ public class Player : MonoBehaviour {
 		speed = baseSpeed;
 		renderer = GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator> ();
-
 	}
 
 	void FixedUpdate () {
@@ -90,6 +92,9 @@ public class Player : MonoBehaviour {
 			Debug.Log("Shield Off");
 			shieldActive = false;
 			anim.SetBool ("shield", false);
+
+			GameObject temp = Instantiate(instantSFX, transform.position, Quaternion.identity);
+			temp.GetComponent<PlaySoundAndDie>().Activate(shieldSound);
 			//Change protagonist sprite back to normal
 		}
 		else
@@ -99,6 +104,9 @@ public class Player : MonoBehaviour {
 
       		cameraShake.shouldShake = true;
 			StartCoroutine(Flashing());
+
+			GameObject temp = Instantiate(instantSFX, transform.position, Quaternion.identity);
+			temp.GetComponent<PlaySoundAndDie>().Activate(hurtSound);
 
 			if(health <= 0)
 			{
