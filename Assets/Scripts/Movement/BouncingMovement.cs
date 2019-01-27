@@ -7,11 +7,13 @@ public class BouncingMovement : BaseMovement {
 	[SerializeField] float speed = 0.05f;
 	[SerializeField] float angle = 25f;
 
+	Animator anim;
 	Vector3 direction;
 	Collider2D collider;
 		
 	void Awake(){
 		collider = GetComponent<Collider2D> ();
+		anim = GetComponent<Animator> ();
 	}
 
 	void OnEnable(){
