@@ -23,7 +23,7 @@ public class Player : MonoBehaviour {
 	[Header("Hearts")]
 	[SerializeField] Image[] hearts;
 
-	[SerializeField] Image gameOverPanel;
+	[SerializeField] GameObject gameOverPanel;
 
 	[SerializeField] Button resetButton;
 
@@ -69,9 +69,7 @@ public class Player : MonoBehaviour {
 
 		if(health <= 0)
 		{
-			//Game Over
-			Debug.Log("Game Over");
-			gameOverPanel.gameObject.SetActive(true);
+			gameOverPanel.SetActive(true);
 			resetButton.gameObject.SetActive(true);
 			Destroy(this.gameObject);
 		}
