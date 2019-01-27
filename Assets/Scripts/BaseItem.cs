@@ -10,7 +10,7 @@ public abstract class BaseItem : MonoBehaviour {
 	}
 
 	protected void OnTriggerEnter2D (Collider2D coll) {
-		if (coll.gameObject.CompareTag ("Player")) {
+		if (coll.gameObject.CompareTag ("Player") || coll.gameObject.CompareTag("Invincible")) {
 			Activate(coll.gameObject.GetComponent<Player>());
 			Destroy(gameObject);
 		}
