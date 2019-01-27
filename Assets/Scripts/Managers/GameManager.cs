@@ -33,9 +33,24 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void RandomSpawnScoreItem () {
-		float x = Random.Range (1f, 9f) / 10f;
-		float y = Random.Range (1f, 9f) / 10f;
-		Vector3 spawnPoint = Vector3.Scale(Camera.main.ViewportToWorldPoint (new Vector3 (x, y, 0f)), new Vector3(1f, 1f, 0f));
+		
+		bool pointFound = false;
+		Vector2 spawnPoint = Vector2.zero;
+		Collider2D collider;
+		while (!pointFound) {
+			Vector2 randomPoint = new Vector2 ((Random.Range (1f, 9f) / 10f), (Random.Range (1f, 9f) / 10f));
+			collider = Physics2D.OverlapPoint (Camera.main.ViewportToWorldPoint(randomPoint));
+			if (collider == null) {
+				spawnPoint = new Vector3(randomPoint.x, randomPoint.y, 0f);
+				spawnPoint = Vector3.Scale (Camera.main.ViewportToWorldPoint (spawnPoint), new Vector3 (1f, 1f, 0f));
+				pointFound = true;
+			} else {
+				if (debugMessages) {
+					print("Can't spawn candy at " + randomPoint);
+				}
+			}
+		}
+
 		Instantiate (scoreItem, spawnPoint, Quaternion.identity);
 		if (debugMessages) {
 			print("Score item spawned at " + spawnPoint);

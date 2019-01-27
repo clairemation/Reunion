@@ -12,8 +12,8 @@ public abstract class BaseItem : MonoBehaviour {
 	protected void OnTriggerEnter2D (Collider2D coll) {
 		if (coll.gameObject.CompareTag ("Player")) {
 			Activate(coll.gameObject.GetComponent<Player>());
+			Destroy(gameObject);
 		}
-		Destroy(gameObject);
 	}
 
 	protected abstract void Activate(Player player);

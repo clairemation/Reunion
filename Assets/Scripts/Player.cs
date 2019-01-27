@@ -23,7 +23,7 @@ public class Player : MonoBehaviour {
 	[Header("Hearts")]
 	[SerializeField] Image[] hearts;
 
-	[SerializeField] Image gameOverPanel;
+	[SerializeField] GameObject gameOverPanel;
 
 	[SerializeField] Button resetButton;
 
@@ -69,12 +69,15 @@ public class Player : MonoBehaviour {
 
 		if(health <= 0)
 		{
-			//Game Over
-			Debug.Log("Game Over");
-			gameOverPanel.gameObject.SetActive(true);
-			resetButton.gameObject.SetActive(true);
-			Destroy(this.gameObject);
+			GameOver ();
 		}
+	}
+
+	void GameOver(){
+		Time.timeScale = 0f;
+		gameOverPanel.SetActive(true);
+		resetButton.gameObject.SetActive(true);
+		Destroy(this.gameObject);
 	}
 
 	IEnumerator Flashing()
