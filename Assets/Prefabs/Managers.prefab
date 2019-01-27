@@ -28,6 +28,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1974323138562950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4847959254369270}
+  - component: {fileID: 82630528925512132}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4435230570447496
 Transform:
   m_ObjectHideFlags: 1
@@ -37,10 +53,119 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.09226422, y: 7.6024113, z: -0.47036028}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4847959254369270}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4847959254369270
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974323138562950}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4435230570447496}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &82630528925512132
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1974323138562950}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: eb4ea82eb81b440ed8099f2dfb205803, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114125036080030852
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,7 +180,16 @@ MonoBehaviour:
   spawnManager: {fileID: 114501799660193730}
   scoreText: {fileID: 0}
   maxScore: 25
-  scoreItem: {fileID: 0}
+  debugMessages: 0
+  scoreItem: {fileID: 114463364415036186, guid: f1aa4a6c6c70c40369ae0895e9d1d02f,
+    type: 2}
+  speedItem: {fileID: 114205696065122272, guid: 6d8d97215550a4b2da07bbff51d1626e,
+    type: 2}
+  healthItem: {fileID: 114005062144249338, guid: 910f8766d651045cfac7cb20dbd4c8d0,
+    type: 2}
+  shieldItem: {fileID: 114164596481046970, guid: b978aa119aa384b41b64eb1fe2501da3,
+    type: 2}
+  chanceSpawnItem: 0.52
 --- !u!114 &114501799660193730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,28 +201,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9afb4484d1c094bf88884ab574356374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawners: []
-  enemies: []
-  spawnDelay: 0
+  spawners:
+  - {fileID: 0}
+  enemies:
+  - {fileID: 1879196362222428, guid: eff6d49aed90d4d24a9d40e35851316b, type: 2}
+  - {fileID: 1496679838659604, guid: 69c15a7e41298454e8a1a7a24093eb00, type: 2}
+  - {fileID: 1496679838659604, guid: 195cc783c976d41638ebfd7e22dcce6b, type: 2}
+  - {fileID: 1496679838659604, guid: a17af0778c97a4a24b7ff1b19f986156, type: 2}
+  - {fileID: 1496679838659604, guid: 3cd1a3fdb0c794ecebc9bb82eee5b0f8, type: 2}
+  spawnDelay: 1
   maxEnemiesCurve:
-    minVal: 1
-    maxVal: 20
+    startVal: 1
+    finishVal: 12
     curveType: 0
   minTimeCurve:
-    minVal: 30
-    maxVal: 5
+    startVal: 10
+    finishVal: 4
     curveType: 0
   maxTimeCurve:
-    minVal: 50
-    maxVal: 10
+    startVal: 25
+    finishVal: 8
     curveType: 0
   minSpawnCountCurve:
-    minVal: 1
-    maxVal: 3
+    startVal: 1
+    finishVal: 2
     curveType: 0
   maxSpawnCountCurve:
-    minVal: 2
-    maxVal: 5
+    startVal: 1
+    finishVal: 5
     curveType: 0
   debugPrintSpawn: 0
   spawnEnemyOnStart: 0

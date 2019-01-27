@@ -78,6 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8670182e5ae9e4df3b340ae78168a506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: 5098e788fce854209b7edf8404ba53ab, type: 3}
+  instantSFX: {fileID: 1192297763046888, guid: 7bae32cfc3f284f68a2363e32ac2e987, type: 2}
 --- !u!212 &212711471856679282
 SpriteRenderer:
   m_ObjectHideFlags: 1

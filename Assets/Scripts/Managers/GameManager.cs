@@ -7,9 +7,16 @@ public class GameManager : MonoBehaviour {
 
 	[SerializeField] SpawnManager spawnManager;
 	[SerializeField] Text scoreText;
-	[SerializeField] ScoreItem scoreItem;
 	[SerializeField] int maxScore = 25;
 	[SerializeField] bool debugMessages = false;
+
+	[SerializeField] ScoreItem scoreItem;
+	[SerializeField] SpeedItem speedItem;
+	[SerializeField] HealthItem healthItem;
+	[SerializeField] ShieldItem shieldItem;
+
+	[Range(0f,1f)]
+	[SerializeField] float chanceSpawnItem;
 
 	int score = 0; 
 
@@ -22,17 +29,34 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Start(){
-		RandomSpawnScoreItem();
+		RandomSpawnItem(scoreItem);
 	}
 
-	void IncreaseScore(){
+	void IncreaseScore () {
 		score++;
-		spawnManager.UpdateSpawnRates(score, maxScore);
-		scoreText.text = score.ToString();
-		RandomSpawnScoreItem();
+		spawnManager.UpdateSpawnRates (score, maxScore);
+		scoreText.text = score.ToString ();
+		RandomSpawnItem (scoreItem);
+		if (Random.value > chanceSpawnItem) {
+			BaseItem randomItem = null;
+			switch (Random.Range (0, 3)) {
+				case 0:
+					randomItem = speedItem;
+					break;
+				case 1:
+					randomItem = shieldItem;
+					break;
+				case 2:
+					randomItem = healthItem;
+					break;
+				default:
+					break;
+			}
+			RandomSpawnItem(randomItem);
+		}
 	}
 
-	void RandomSpawnScoreItem () {
+	void RandomSpawnItem (BaseItem item) {
 		
 		bool pointFound = false;
 		Vector2 spawnPoint = Vector2.zero;
@@ -51,7 +75,7 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 
-		Instantiate (scoreItem, spawnPoint, Quaternion.identity);
+		Instantiate (item, spawnPoint, Quaternion.identity);
 		if (debugMessages) {
 			print("Score item spawned at " + spawnPoint);
 		}
