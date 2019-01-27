@@ -25,8 +25,7 @@ GameObject:
   - component: {fileID: 114154600718186834}
   - component: {fileID: 114964940215332022}
   - component: {fileID: 114362862471223566}
-  - component: {fileID: 114954490986025430}
-  - component: {fileID: 82119543698000192}
+  - component: {fileID: 114864031376208680}
   m_Layer: 0
   m_Name: AuntEnemy
   m_TagString: Enemy
@@ -185,10 +184,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1496679838659604}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7b93a216c0ba4de6840a673325c0e9c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e983fb34efb84933a99ddb45dff7237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.07
+  speed: 0.15
   angle: 25
 --- !u!114 &114362862471223566
 MonoBehaviour:
@@ -202,7 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceThreshold: 4
---- !u!114 &114954490986025430
+--- !u!114 &114864031376208680
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,9 +212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 089e21fa6bda147689b2f9cd27007a8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSound: {fileID: 8300000, guid: aa48ea2b3796d429fbc373de5617dbe6, type: 3}
-  hitSound: {fileID: 8300000, guid: fbdcd3cca49104f03af6ee5df81fd16a, type: 3}
-  spawnSound: {fileID: 0}
 --- !u!114 &114964940215332022
 MonoBehaviour:
   m_ObjectHideFlags: 1

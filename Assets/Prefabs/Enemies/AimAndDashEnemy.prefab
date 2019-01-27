@@ -22,10 +22,12 @@ GameObject:
   - component: {fileID: 212858197478343152}
   - component: {fileID: 58672726028379674}
   - component: {fileID: 50939272625632284}
-  - component: {fileID: 114636669198671964}
-  - component: {fileID: 114819172306941794}
+  - component: {fileID: 114273526761891068}
+  - component: {fileID: 114145771948847370}
+  - component: {fileID: 114278629655421040}
+  - component: {fileID: 114540474507334484}
   m_Layer: 0
-  m_Name: GrandmaEnemy
+  m_Name: AimAndDashEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +81,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!114 &114636669198671964
+--- !u!114 &114145771948847370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1496679838659604}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c3e3ddf7f1534204b03f624c8db4725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.15
+  angle: 25
+--- !u!114 &114273526761891068
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,12 +102,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1496679838659604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e983fb34efb84933a99ddb45dff7237, type: 3}
+  m_Script: {fileID: 11500000, guid: 3aaee72e06eb940cd8694cd9d29d692e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.07
+  speed: 0.05
   angle: 25
---- !u!114 &114819172306941794
+--- !u!114 &114278629655421040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1496679838659604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4ecf31aaa24429eae845cbdc8daa01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114540474507334484
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,7 +165,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.30588233, g: 0.5244811, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
