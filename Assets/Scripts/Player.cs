@@ -119,6 +119,7 @@ public class Player : MonoBehaviour {
 	void GameOver(){
 		Debug.Log ("Game Over");
 		Time.timeScale = 0f;
+		cameraShake.StopShaking ();
 		gameOverPanel.SetActive(true);
 		resetButton.gameObject.SetActive(true);
 		Destroy(this.gameObject);

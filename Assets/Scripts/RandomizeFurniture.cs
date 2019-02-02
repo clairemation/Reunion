@@ -45,11 +45,11 @@ public class RandomizeFurniture : MonoBehaviour {
 
 			if(num == 0)
 			{
-				Instantiate(couchPrefab, new Vector2(x_pos, y_pos), Quaternion.identity);
+				Instantiate(couchPrefab, new Vector3(x_pos, y_pos, 0f), couchPrefab.transform.rotation);
 			}
 			else 
 			{
-				Instantiate(tablePrefab, new Vector2(x_pos, y_pos), Quaternion.identity);
+				Instantiate(tablePrefab, new Vector3(x_pos, y_pos, 0f), Quaternion.identity);
 			}
 		}
 	}

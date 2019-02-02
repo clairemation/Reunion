@@ -484,6 +484,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2082634786}
+        m_MethodName: StopShaking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1070083893}
+        m_MethodName: StopFlashing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &769059119
@@ -708,6 +730,16 @@ Prefab:
       propertyPath: shieldSound
       value: 
       objectReference: {fileID: 8300000, guid: 8f45e0f5e6f9148c988e227195d283a7, type: 3}
+    - target: {fileID: 212974579203478564, guid: b70302a3500634b109ea388f83d73220,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: -1663218937
+      objectReference: {fileID: 0}
+    - target: {fileID: 212974579203478564, guid: b70302a3500634b109ea388f83d73220,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b70302a3500634b109ea388f83d73220, type: 2}
   m_IsPrefabAsset: 0
@@ -765,6 +797,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224881400595958492, guid: b537f3d2eeefa46be8a901d0da8ca112,
     type: 2}
   m_PrefabInternal: {fileID: 1420334191}
+--- !u!114 &1070083893 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114251314373388364, guid: b70302a3500634b109ea388f83d73220,
+    type: 2}
+  m_PrefabInternal: {fileID: 921143639}
+  m_Script: {fileID: 11500000, guid: c0157b3fce949417aaad2088ec3a7b69, type: 3}
 --- !u!114 &1305680712 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114430561059002270, guid: b537f3d2eeefa46be8a901d0da8ca112,
