@@ -135,4 +135,9 @@ public class Player : MonoBehaviour {
 		}
 		gameObject.tag = "Player";
 	}
+
+	public void StopFlashing(){
+		StopAllCoroutines ();
+		renderer.enabled = true;
+	}
 }

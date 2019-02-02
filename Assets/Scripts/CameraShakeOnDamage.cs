@@ -24,20 +24,23 @@ public class CameraShakeOnDamage : MonoBehaviour {
 	}
 
 	void Update(){
-
 		if(shouldShake){
-
 			if(shakeDuration > 0){
-
 				camera.localPosition = originalPosition + Random.insideUnitSphere * shakePower;
 				shakeDuration -= Time.deltaTime * shakeSlowDownAmount;
 
-			}else{
-
-				shouldShake = false;
-				shakeDuration = initialDuration;
-				camera.localPosition = originalPosition;
+			} else {
+				StopShaking ();
 			}
 		}
+	}
+
+	public void StopShaking(){
+		if (!shouldShake) {
+			return;
+		}
+		shouldShake = false;
+		shakeDuration = initialDuration;
+		camera.localPosition = originalPosition;
 	}
 }
